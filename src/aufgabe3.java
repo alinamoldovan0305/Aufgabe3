@@ -77,5 +77,19 @@ public class aufgabe3 {
         return ergebnis;
     }
 
+    //Berechnen Sie die ganzzahlige Division. Die erste Zahl ist eine große Zahl, die zweite
+    //Zahl ist nur eine Ziffer.
+
+    public static int[] division(int[] zahl2, int ziffer) {
+        int [] ergebnis = new int[zahl2.length];
+        int rest = 0;
+        for (int i = 0; i < zahl2.length; i++) {
+            int temp = rest * 10 + zahl2[i];
+            ergebnis[i] = temp / ziffer;
+            rest = temp % ziffer;
+        }
+
+        return ergebnis;
+    }
 
 }
