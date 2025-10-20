@@ -7,7 +7,9 @@ public class Main {
 
         //1-ter Unterpunkt
         System.out.println("Summe von zwei Arrays: "+ Arrays.toString(aufgabe3.summe2Arrays(zahl1,zahl2)));
+
         //2-ter Unterpunkt
         System.out.println("Diff von zwei Arrays: "+ Arrays.toString(aufgabe3.diff2Arrays(zahl1,zahl2)));
+
     }
 }
