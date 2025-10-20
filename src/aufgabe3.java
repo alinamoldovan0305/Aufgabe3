@@ -1,3 +1,6 @@
+
+import java.util.Arrays;
+
 public class aufgabe3 {
     //Es gibt 2 große Zahlen. Die Zahlen sind als Array dargestellt.
     //Berechnen Sie die Summe. Die Zahlen haben die gleiche Anzahl an Ziffern.
@@ -13,6 +16,9 @@ public class aufgabe3 {
         ergebnis[0]=übertrag;
         return ergebnis;
     }
+
+    //Es gibt 2 große Zahlen. Die Zahlen sind als Array dargestellt.
+    //Berechnen Sie die Differenz. Die Zahlen haben die gleiche Anzahl an Ziffern.
     public static int VergleichenvonArrays(int[] zahl1, int[] zahl2) {
         for (int i = 0; i < zahl1.length; i++) {
             if (zahl1[i] > zahl2[i]) return 1;
@@ -51,4 +57,25 @@ public class aufgabe3 {
         }
         return ergebnis;
     }
+
+    //Berechnen Sie die Multiplikation. Die erste Zahl ist eine große Zahl, die zweite Zahl
+    //ist nur eine Ziffer.
+    public static int[] multiplikation(int[] zahl1, int ziffer) {
+        int [] ergebnis = new int[zahl1.length+1];
+        int übertrag = 0;
+
+        for (int i = zahl1.length-1; i >= 0; i--) {
+            int produkt=zahl1[i]*ziffer+ übertrag;
+            ergebnis[i+1] = produkt%10;
+            übertrag=produkt/10;
+        }
+        ergebnis[0] = übertrag;
+
+        if (ergebnis[0] == 0) {
+            ergebnis = Arrays.copyOfRange(ergebnis, 1, ergebnis.length);
+        }
+        return ergebnis;
+    }
+
+
 }
